@@ -4,8 +4,8 @@
 <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D">
 
 ## Demo Link
-- [登入]()
-- [產品後台]()
+- [登入](https://neil10241126.github.io/Vue3-week4/login.html)
+- [產品後台](https://neil10241126.github.io/Vue3-week4/products.html)
 
 ## Skills I Have Learn and Use
 - Vue 元件化 (區域、全域註冊匯入)
