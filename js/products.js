@@ -1,5 +1,6 @@
 import { createApp } from "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.45/vue.esm-browser.min.js";
-import pagination from "./pagination.js";
+import Pagination from "./components/pagination.js";
+import ProductModal from "./components/productModal.js";
 
 const site = 'https://vue3-course-api.hexschool.io/';
 const api_path = 'neil-api-test1';
@@ -78,6 +79,10 @@ const app = createApp({
           alert(err.data.message);
         })
     },
+    createImages() {
+      this.tempProduct.imagesUrl = [];
+      this.tempProduct.imagesUrl.push('');
+    },
     // #4 刪除產品
     deleteProduct() {
       const url = `${site}v2/api/${api_path}/admin/product/${this.tempProduct.id}`;    
@@ -93,7 +98,8 @@ const app = createApp({
     },
   },
   components: {
-    pagination,
+    Pagination,
+    ProductModal,
   },
   mounted() {
     // 取出 token
@@ -109,11 +115,6 @@ const app = createApp({
   },
 });
 
-// Modal product 全域註冊
-app.component('product-modal', {
-  props: ['tempProduct', 'updateProduct', 'isNew'],
-  template: '#product-modal-template',
-});
 
 // Modal delete 全域註冊
 app.component('del-product-modal', {
